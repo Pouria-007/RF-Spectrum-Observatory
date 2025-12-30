@@ -28,17 +28,43 @@ A high-performance platform for RF spectrum analysis that combines CUDA-accelera
 
 ### **Live Demos (Videos)**
 
-**📡 Geospatial Live RF Map (Drone Flight Path)**  
-![Geospatial Demo](docs/images/Geospatial_Live_RF_Map_Drone_Flight_Path.webm)
+**📡 Geospatial Live RF Map (Drone Flight Path)**
 
-**📊 Spectral Visualization (Real-Time)**  
-![Spectral Demo](docs/images/Spectral_Visualization.webm)
+<video src="docs/images/Geospatial_Live_RF_Map_Drone_Flight_Path.webm" controls width="100%">
+  Your browser does not support the video tag.
+</video>
 
-**🖥️ GPU HPC Monitor (Performance Telemetry)**  
-![GPU Monitor Demo](docs/images/GPU_HPC_Monitor.webm)
+*Interactive 3D map showing drone flight path with real-time RF signal measurements. Yellow helicopter marker tracks position, tiles show power levels.*
 
-**📊 Raw Data Stream (Low-Level Inspection)**  
-![Raw Data Demo](docs/images/Raw_Data_Monitor.webm)
+---
+
+**📊 Spectral Visualization (Real-Time)**
+
+<video src="docs/images/Spectral_Visualization.webm" controls width="100%">
+  Your browser does not support the video tag.
+</video>
+
+*Live spectrum analyzer and waterfall display updating in real-time with synthetic 5G-like signals.*
+
+---
+
+**🖥️ GPU HPC Monitor (Performance Telemetry)**
+
+<video src="docs/images/GPU_HPC_Monitor.webm" controls width="100%">
+  Your browser does not support the video tag.
+</video>
+
+*Real-time GPU utilization, memory usage, power draw, and throughput metrics for HPC workload monitoring.*
+
+---
+
+**📊 Raw Data Stream (Low-Level Inspection)**
+
+<video src="docs/images/Raw_Data_Monitor.webm" controls width="100%">
+  Your browser does not support the video tag.
+</video>
+
+*Raw IQ samples, GPS fixes, and DSP features inspection for debugging and validation.*
 
 ---
 
