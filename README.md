@@ -26,39 +26,52 @@ A high-performance platform for RF spectrum analysis that combines CUDA-accelera
 
 ---
 
-### **Live Demos (Videos)**
+### **Live Demos (Animated)**
 
-> 📹 **Click on images below to watch demo videos**
+> 🎬 **Auto-playing demos below** (click for full-quality video downloads)
 
 #### **📡 Geospatial Live RF Map (Drone Flight Path)**
 
-[![Geospatial RF Map Demo](docs/images/3dMap.png)](https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/Geospatial_Live_RF_Map_Drone_Flight_Path.webm)
-
-*🎥 Click image to watch: Interactive 3D map showing drone flight path with real-time RF signal measurements. Yellow helicopter marker tracks position, tiles show power levels.*
+<div align="center">
+  <a href="https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/Geospatial_Live_RF_Map_Drone_Flight_Path.webm">
+    <img src="docs/images/Geospatial_Live_RF_Map_Drone_Flight_Path.gif" width="100%" alt="Geospatial RF Map Demo">
+  </a>
+  <p><i>Interactive 3D map showing drone flight path with real-time RF signal measurements. Yellow helicopter marker tracks position, tiles show power levels. (Click to download full video)</i></p>
+</div>
 
 ---
 
 #### **📊 Spectral Visualization (Real-Time)**
 
-[![Spectral Visualization Demo](docs/images/SpectralVisualization1.png)](https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/Spectral_Visualization.webm)
-
-*🎥 Click image to watch: Live spectrum analyzer and waterfall display updating in real-time with synthetic 5G-like signals.*
+<div align="center">
+  <a href="https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/Spectral_Visualization.webm">
+    <img src="docs/images/Spectral_Visualization.gif" width="100%" alt="Spectral Visualization Demo">
+  </a>
+  <p><i>Live spectrum analyzer and waterfall display updating in real-time with synthetic 5G-like signals. (Click to download full video)</i></p>
+</div>
 
 ---
 
 #### **🖥️ GPU HPC Monitor (Performance Telemetry)**
 
-[![GPU HPC Monitor](docs/images/SpectralVisualization1.png)](https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/GPU_HPC_Monitor.webm)
-
-*🎥 Click image to watch: Real-time GPU utilization, memory usage, power draw, and throughput metrics for HPC workload monitoring.*
+<div align="center">
+  <a href="https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/GPU_HPC_Monitor.webm">
+    <img src="docs/images/GPU_HPC_Monitor.gif" width="100%" alt="GPU HPC Monitor">
+  </a>
+  <p><i>Real-time GPU utilization, memory usage, power draw, and throughput metrics for HPC workload monitoring. (Click to download full video)</i></p>
+</div>
 
 ---
 
 #### **📊 Raw Data Stream (Low-Level Inspection)**
 
-[![Raw Data Monitor](docs/images/SpectralVisualization1.png)](https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/Raw_Data_Monitor.webm)
+<div align="center">
+  <a href="https://github.com/Pouria-007/RF-Spectrum-Observatory/raw/main/docs/images/Raw_Data_Monitor.webm">
+    <img src="docs/images/Raw_Data_Monitor.gif" width="100%" alt="Raw Data Monitor">
+  </a>
+  <p><i>Raw IQ samples, GPS fixes, and DSP features inspection for debugging and validation. (Click to download full video)</i></p>
+</div>
 
-*🎥 Click image to watch: Raw IQ samples, GPS fixes, and DSP features inspection for debugging and validation.*
 
 ---
 
