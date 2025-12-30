@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+outputs/*.parquet
+outputs/*.geojson
+outputs/*.csv
+outputs/*.log
+assets/maps/*.geojson
+assets/routes/*.csv
+
+# Keep directory structure
+!outputs/.gitkeep
+!assets/maps/.gitkeep
+!assets/routes/.gitkeep
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Performance profiling
+*.prof
+*.lprof
+
+# Data files (large)
+*.h5
+*.hdf5
+*.nc
+*.zarr/
+
+# Conda
+.conda/

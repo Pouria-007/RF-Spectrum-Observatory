@@ -1,0 +1,38 @@
+name: rapids
+channels:
+  - rapidsai
+  - conda-forge
+  - nvidia
+dependencies:
+  # Python
+  - python=3.11
+  
+  # RAPIDS suite (25.12 release)
+  - rapids=25.12
+  - cuda-version=13
+  
+  # Additional GPU libraries
+  - cusignal
+  - cupy
+  - rmm
+  
+  # Scientific/numeric
+  - numpy
+  - scipy
+  
+  # Geospatial
+  - shapely
+  - pyproj
+  
+  # Utilities
+  - pyyaml
+  - loguru
+  
+  # Pip packages (UI/export)
+  - pip
+  - pip:
+      - streamlit>=1.30.0
+      - pydeck>=0.8.0
+      - plotly>=5.18.0
+      - geojson>=3.0.0
+

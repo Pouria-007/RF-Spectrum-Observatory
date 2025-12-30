@@ -1,0 +1,120 @@
+# GPU-Accelerated Sub-6 Spectrum Observatory - Default Configuration
+
+# Project metadata
+project:
+  name: "RF-Spectrum-Observatory"
+  version: "0.1.0"
+  output_dir: "outputs"
+  github_url: "https://github.com/Pouria-007/RF-Spectrum-Observatory"  # Relative to project root
+
+# RF parameters (5G-focused sub-6 mid-band)
+rf:
+  center_freq_hz: 3_550_000_000  # 3.55 GHz (CBRS mid-band)
+  sample_rate_sps: 30_720_000    # 30.72 MS/s (100 MHz bandwidth / LTE baseband rate)
+  bandwidth_hz: 100_000_000      # 100 MHz
+  gain_db: 40.0                  # SDR gain (if applicable)
+  fft_size: 8192                 # FFT bins (balanced for performance)
+  window_type: "hann"            # hann, hamming, blackman
+
+# DSP pipeline
+dsp:
+  frames_per_batch: 32           # Batch size for GPU processing (increased from 16)
+  smoothing_factor: 0.2          # EMA alpha (0=full smoothing, 1=no smoothing)
+  welch_segments: 8              # Segments for Welch's method (optional)
+  noise_floor_percentile: 10     # Percentile for noise floor estimation
+  
+  # Band definitions (for occupancy/power metrics)
+  bands:
+    - name: "CBRS Band 48"
+      start_hz: 3_550_000_000
+      end_hz: 3_700_000_000
+    - name: "5G n77 subset"
+      start_hz: 3_500_000_000
+      end_hz: 3_600_000_000
+
+# Geospatial settings
+geo:
+  # Map center (San Francisco Financial District - neutral public location)
+  map_center_lat: 37.7946
+  map_center_lon: -122.3999
+  
+  # Tile grid
+  tile_size_meters: 20.0         # Smaller tiles (20m) so GPS crosses more tiles
+  grid_extent_meters: 2500.0     # Total grid size (2.5km x 2.5km to cover entire route)
+  
+  # Aggregation
+  aggregate_window_frames: 5   # Reduced from 20 - tiles generate faster (every 1 second)
+
+# Synthetic data generation
+synthetic:
+  # IQ generation
+  iq:
+    num_carriers: 5              # Simulated OFDM/tone carriers
+    carrier_bw_hz: 10_000_000    # Each carrier spans 10 MHz
+    carrier_power_db: -30        # Carrier power relative to full scale
+    noise_floor_db: -80          # Noise floor power
+    
+    # Interference modes (optional)
+    interference:
+      enabled: true
+      burst_jammer:
+        enabled: true
+        duty_cycle: 0.1          # 10% on, 90% off
+        period_frames: 50
+      swept_tone:
+        enabled: false
+        sweep_rate_hz_per_sec: 1_000_000
+  
+  # GPS route
+  gps:
+    route_csv: "assets/routes/route.csv"
+    update_rate_hz: 10.0         # 10 GPS fixes per second
+    speed_mps: 50.0              # 50 m/s = 180 km/h = car on highway speed
+    
+  # Map assets
+  maps:
+    city_block_geojson: "assets/maps/city_block.geojson"
+    house_geojson: "assets/maps/house.geojson"
+
+# Performance / GPU settings
+performance:
+  rmm_pool_size_gb: null         # RMM disabled - use default CuPy allocator (GPU memory tight)
+  update_rate_hz: 10.0           # Target UI update rate
+  max_frames_buffer: 1000        # Max buffered frames before drop
+  enable_profiling: false        # CuPy profiling
+  frames_per_refresh: 5          # Process 5 frames per UI refresh (balanced for responsiveness)
+
+# UI settings
+ui:
+  streamlit_port: 8501
+  theme: "dark"
+  
+  # Chart settings
+  spectrum:
+    traces:
+      - name: "Current PSD"
+        color: "#00ff00"
+        line_width: 2
+      - name: "Smoothed PSD"
+        color: "#ffaa00"
+        line_width: 2
+      - name: "Noise Floor"
+        color: "#ff0000"
+        line_width: 1
+        dash: "dash"
+  
+  waterfall:
+    colorscale: "Viridis"        # Plotly colorscale
+    max_time_frames: 200         # Waterfall depth
+  
+  map:
+    tile_colormap: "plasma"      # Tile heatmap colormap
+    extrusion_scale: 10.0        # 3D height multiplier
+    initial_zoom: 15
+
+# Logging
+logging:
+  level: "INFO"                  # DEBUG, INFO, WARNING, ERROR
+  format: "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan> - <level>{message}</level>"
+  log_file: "outputs/run.log"
+
